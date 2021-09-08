@@ -1,0 +1,1522 @@
+{
+	"info": {
+		"_postman_id": "1896519f-99e8-4328-95db-583eaa24a4f5",
+		"name": "Echo-Practice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Autorizaciones",
+			"item": [
+				{
+					"name": "BasicAutho",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "postman",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://postman-echo.com/basic-auth",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"basic-auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Oauth1",
+					"request": {
+						"auth": {
+							"type": "oauth1",
+							"oauth1": [
+								{
+									"key": "consumerSecret",
+									"value": "D+EdQ-gs$-%@2Nu7",
+									"type": "string"
+								},
+								{
+									"key": "consumerKey",
+									"value": "RKCGzna7bv9YD57c",
+									"type": "string"
+								},
+								{
+									"key": "signatureMethod",
+									"value": "HMAC-SHA1",
+									"type": "string"
+								},
+								{
+									"key": "version",
+									"value": "1.0",
+									"type": "string"
+								},
+								{
+									"key": "addParamsToHeader",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "addEmptyParamsToSign",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://postman-echo.com/oauth1",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"oauth1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Basic",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "Body-Json",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"apellido\":\"Gomez\",\r\n    \"Ciudad\":\"Alla\",\r\n    \"Codigo postal\":\"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}",
+									"host": [
+										"{{url}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Parametros",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/get?erika=hola&borges=adios",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"get"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "12",
+											"disabled": true
+										},
+										{
+											"key": "erika",
+											"value": "hola"
+										},
+										{
+											"key": "borges",
+											"value": "adios"
+										},
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "EjemploParametrosOK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/get?erika=hola&borges=adios",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"get"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "12",
+													"disabled": true
+												},
+												{
+													"key": "erika",
+													"value": "hola"
+												},
+												{
+													"key": "borges",
+													"value": "adios"
+												},
+												{
+													"key": "",
+													"value": null,
+													"disabled": true
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": "{\r\n    \"args\": {\r\n        \"erika\": \"hola\",\r\n        \"borges\": \"adios\"\r\n    },\r\n    \"headers\": {\r\n        \"x-forwarded-proto\": \"https\",\r\n        \"x-forwarded-port\": \"443\",\r\n        \"host\": \"postman-echo.com\",\r\n        \"x-amzn-trace-id\": \"Root=1-6126aa07-5f9ea420156e00841db76021\",\r\n        \"user-agent\": \"PostmanRuntime/7.28.3\",\r\n        \"accept\": \"*/*\",\r\n        \"postman-token\": \"aab4fc01-2978-48cb-84dd-137ea5a69ae8\",\r\n        \"accept-encoding\": \"gzip, deflate, br\",\r\n        \"cookie\": \"sails.sid=s%3AolXexLqB1Q1u7DdxB0Klfete3yUTMSgH.%2BY8tqhg%2F2qWugzYlDuXCWvXdV4CUSD369kguZG2zyKw\"\r\n    },\r\n    \"url\": \"https://postman-echo.com/get?erika=hola&borges=adios\"\r\n}"
+								},
+								{
+									"name": "MundoCruel",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/get?erika=Mundo&borges=Cruel",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"get"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "12",
+													"disabled": true
+												},
+												{
+													"key": "erika",
+													"value": "Mundo"
+												},
+												{
+													"key": "borges",
+													"value": "Cruel"
+												},
+												{
+													"key": "",
+													"value": null,
+													"disabled": true
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": "{\r\n    \"args\": {\r\n        \"erika\": \"Mundo\",\r\n        \"borges\": \"Cruel\"\r\n    },\r\n    \"headers\": {\r\n        \"x-forwarded-proto\": \"https\",\r\n        \"x-forwarded-port\": \"443\",\r\n        \"host\": \"postman-echo.com\",\r\n        \"x-amzn-trace-id\": \"Root=1-6126aa07-5f9ea420156e00841db76021\",\r\n        \"user-agent\": \"PostmanRuntime/7.28.3\",\r\n        \"accept\": \"*/*\",\r\n        \"postman-token\": \"aab4fc01-2978-48cb-84dd-137ea5a69ae8\",\r\n        \"accept-encoding\": \"gzip, deflate, br\",\r\n        \"cookie\": \"sails.sid=s%3AolXexLqB1Q1u7DdxB0Klfete3yUTMSgH.%2BY8tqhg%2F2qWugzYlDuXCWvXdV4CUSD369kguZG2zyKw\"\r\n    },\r\n    \"url\": \"https://postman-echo.com/get?erika=hola&borges=adios\"\r\n}"
+								}
+							]
+						},
+						{
+							"name": "Prueba get",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test que comprueba llamada correcta\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"La respuesta del body contiene\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"deflate\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/get",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"get"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "leer xml como json",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonObject = xml2Json(responseBody);\r",
+											"pm.test(\"Titulo de SlideShow\", function(){\r",
+											"    pm.expect(jsonObject.slideshow.$.title).to.eql(\"Sample Slide Show\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{urlbin}}/xml",
+									"host": [
+										"{{urlbin}}"
+									],
+									"path": [
+										"xml"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ip",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/ip",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"ip"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "Formulario",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Nombre\":\"{{$randomFirstName}}\",\r\n    \"Apellido\":\"{{$randomLastName}}\",\r\n    \"Ciudad\":\"{{$randomCity}}\",\r\n    \"E-mail\":\"{{$randomEmail}}\",\r\n    \"Contraseña\":\"{{$randomPassword}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/post?param={{$randomInt}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"post"
+									],
+									"query": [
+										{
+											"key": "param",
+											"value": "{{$randomInt}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Headers",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Testing",
+										"value": "Data-testing",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Nombre\":\"{{$randomFirstName}}\",\r\n    \"Apellido\":\"{{$randomLastName}}\",\r\n    \"Ciudad\":\"{{$randomCity}}\",\r\n    \"E-mail\":\"{{$randomEmail}}\",\r\n    \"Contraseña\":\"{{$randomPassword}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/post",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post mediante json",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData;\r",
+											"pm.test(\"Resultados de Data\", function () {\r",
+											"    jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.data.Nombre).to.eql(\"Erika\");\r",
+											"    pm.expect(jsonData.data.Apellido).to.eql(\"Borges\");\r",
+											"    console.log(jsonData.data.Apellido)\r",
+											"});\r",
+											"pm.test(\"Resultados de URL\", function () {\r",
+											"    jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.url).to.eql(\"https://postman-echo.com/post\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Resultados del Json\", function () {\r",
+											"    jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.json.Edad).to.eql(29);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Código 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Recibo cadena de texto en el campo nombre\", function () {\r",
+											"    jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.json.Nombre).to.be.a(\"string\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Nombre\":\"Erika\",\r\n    \"Apellido\": \"Borges\",\r\n    \"Edad\":29\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/post",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post mediante json Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData;\r",
+											"pm.test(\"Recibo cadena de texto en el campo nombre\", function () {\r",
+											"    jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.json.Nombre).to.be.a(\"string\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Test con Chai Assertions\", function (){\r",
+											"    pm.expect(jsonData).to.have.a.property(\"args\");\r",
+											"    pm.expect(jsonData.json.Nombre).to.include(\"rik\");\r",
+											"    pm.expect(true).to.be.true;\r",
+											"    pm.expect([1, 2, 3]).to.include.members([1,2]);\r",
+											"    pm.expect(jsonData.data).to.not.be.empty;\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Más test\", function (){\r",
+											"    pm.expect(jsonData.json.Nombre).to.have.lengthOf(5);\r",
+											"    pm.expect(jsonData.json.Nombre).to.have.lengthOf.above(3);\r",
+											"    pm.expect(jsonData.json.Nombre).to.have.lengthOf.below(6);\r",
+											"    pm.expect(jsonData.json.Nombre).to.have.lengthOf.within(5,20);\r",
+											"    pm.expect(jsonData.json.Nombre).to.match(/^Er/);\r",
+											"    pm.expect(jsonData.json.Nombre).to.match(/ri/);\r",
+											"    pm.expect(jsonData.json.Nombre).to.not.match(/or/);\r",
+											"    pm.expect(jsonData.json.Edad).to.be.closeTo(30,4);\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Nombre\":\"Erika\",\r\n    \"Apellido\": \"Borges\",\r\n    \"Edad\":29\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/post",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Variable en tiempos de ejecución",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json()\r",
+											"pm.environment.set(\"NombreAmbiente\", jsonData.json.Nombre);\r",
+											"pm.globals.set(\"EdadGlobal\", jsonData.json.Edad);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Nombre\":\"{{$randomFirstName}}\",\r\n    \"Apellido\":\"{{$randomLastName}}\",\r\n    \"Edad\": {{$randomInt}}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/post",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "pre request",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const edad = Math.floor((Math.random()*100)+1);\r",
+											"pm.environment.set(\"edadAleatoria\", edad);\r",
+											"\r",
+											"pm.sendRequest(\"https://postman-echo.com/ip\", function (err, response) {\r",
+											"    var jsonData = response.json();\r",
+											"    pm.environment.set(\"ip\", jsonData.ip);\r",
+											"});\r",
+											"\r",
+											"pm.sendRequest(\"https://postman-echo.com/time/now\", function (err, response) {\r",
+											"    var responseNow = response.text();\r",
+											"    pm.environment.set(\"fechaActual\", responseNow);\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Nombre\":\"{{$randomFirstName}}\",\r\n    \"Apellido\":\"{{$randomLastName}}\",\r\n    \"Edad\": {{edadAleatoria}},\r\n    \"Codigo\":\"{{$guid}}\",\r\n    \"Cantidad\":{{$randomInt}},\r\n    \"Contraseña\":\"{{$randomPassword}}\",\r\n    \"ip\": \"{{ip}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/post",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"post"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Utilidades",
+			"item": [
+				{
+					"name": "Status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"El código aparece en la lista\", function (){\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201,200,202])\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/status/202",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"status",
+								"202"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status con parámetros",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/status/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"status",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "200"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Stream",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/stream/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stream",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delay",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Respuesta menor a 3000ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"El cuerpo de la respuesta es\", function () {\r",
+									"    pm.response.to.have.body('{\"delay\":\"2\"}');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Length is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Length\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Tiene cadena OK\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/delay/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"delay",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UTF8",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/encoding/utf8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"encoding",
+								"utf8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IP",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/ip",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ip"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Utilidades de fecha y hora",
+			"item": [
+				{
+					"name": "Now",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/time/now",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time",
+								"now"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fecha correcta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/time/valid?timestamp=2021-02-29",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time",
+								"valid"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": "2021-02-29"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Día semana",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/time/unit?timestamp=2021-08-08&unit=month",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time",
+								"unit"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": "2021-08-08"
+								},
+								{
+									"key": "unit",
+									"value": "month"
+								},
+								{
+									"key": "day",
+									"value": "day",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sumar tiempo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/time/add?timestamp=2021-08-25&years=20",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time",
+								"add"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": "2021-08-25"
+								},
+								{
+									"key": "years",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Restar tiempo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/time/subtract?timestamp=2021-08-25&years=20",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time",
+								"subtract"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": "2021-08-25"
+								},
+								{
+									"key": "years",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Start",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/time/start?timestamp=2021-08-25&unit=months",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time",
+								"start"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": "2021-08-25"
+								},
+								{
+									"key": "unit",
+									"value": "months"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partir fecha y hora",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/time/object?timestamp=2021-02-12 23:03:44",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time",
+								"object"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": "2021-02-12 23:03:44"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Anterior/Before",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/time/before?timestamp=2021-08-25&target=2021-02-04",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time",
+								"before"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": "2021-08-25"
+								},
+								{
+									"key": "target",
+									"value": "2021-02-04"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Posterior/after",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/time/after?timestamp=2021-08-25&target=2021-02-04",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time",
+								"after"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": "2021-08-25"
+								},
+								{
+									"key": "target",
+									"value": "2021-02-04"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Entre/between",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/time/between?timestamp=2021-08-25&start=2021-12-04&end=2021-04-28",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time",
+								"between"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": "2021-08-25"
+								},
+								{
+									"key": "start",
+									"value": "2021-12-04"
+								},
+								{
+									"key": "end",
+									"value": "2021-04-28"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bisiesto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/time/leap?timestamp=2020-04-22",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"time",
+								"leap"
+							],
+							"query": [
+								{
+									"key": "timestamp",
+									"value": "2020-04-22"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transform",
+			"item": [
+				{
+					"name": "Transformación",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/transform/collection?from=1?to=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"transform",
+								"collection"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "1?to=2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cookies",
+			"item": [
+				{
+					"name": "Obtener Cookies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cookies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cookies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Añadir cookie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cookies/set?param1=erika&param2=borges",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cookies",
+								"set"
+							],
+							"query": [
+								{
+									"key": "param1",
+									"value": "erika"
+								},
+								{
+									"key": "param2",
+									"value": "borges"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete cookie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cookies/delete?param1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cookies",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "param1",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reutilización de test",
+			"item": [
+				{
+					"name": "Test base",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									" var MisTest = () => {\r",
+									"//= () => {}: Representa una cadena anónima, que sirve para agregar distintos test dentro de un mismo elemento  \r",
+									"   pm.test(\"Respuesta OK\", function () {\r",
+									"        pm.response.to.have.status(200);\r",
+									"    });\r",
+									"\r",
+									"   pm.test(\"Tiempo de Respuesta OK\", function () {\r",
+									"        pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"    });\r",
+									"}\r",
+									"\r",
+									"pm.environment.set(\"ReutilizarTest\", MisTest.toString());\r",
+									"//para pasar la información de la varibale se utiliza el toString"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"eval(pm.environment.get(\"ReutilizarTest\"))();\r",
+									"//eval sirve para evaluar y ejecutar la información que contiene el javaScrip, en este caso se le pasa la variable \"ReutilizarTest\" que contiene los dos test."
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/get",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usandoVariableDeReutilizaciondeVariable",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"eval(pm.environment.get(\"ReutilizarTest\"))();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/get?erika=hola&borges=adios",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"get"
+							],
+							"query": [
+								{
+									"key": "erika",
+									"value": "hola"
+								},
+								{
+									"key": "borges",
+									"value": "adios"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Aserciones",
+			"item": [
+				{
+					"name": "ChaiAssertion",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData;\r",
+									"\r",
+									"pm.test(\"Json OK\", function () {\r",
+									"    jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.a.property(\"headers\");\r",
+									"    pm.expect(jsonData).to.have.a.property(\"args\");\r",
+									"    pm.expect(jsonData.args).to.be.empty;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"url OK\", function(){\r",
+									"    pm.expect(jsonData.url).to.equal(\"http://httpbin.org/get\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Origin OK\", function(){\r",
+									"    pm.expect(jsonData.origin).to.be.a(\"string\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlbin}}/get",
+							"host": [
+								"{{urlbin}}"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WorkFlow",
+			"item": [
+				{
+					"name": "Peticion1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"eval(pm.environment.get(\"ReutilizarTest\"))();"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/get",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Peticion2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"postman.setNextRequest(\"Peticion4\");\r",
+									"\r",
+									"eval(pm.environment.get(\"ReutilizarTest\"))();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/get",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Peticion3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"eval(pm.environment.get(\"ReutilizarTest\"))();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/get",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Peticion4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"eval(pm.environment.get(\"ReutilizarTest\"))();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/get",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "URL con environment siempre actualizado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.getpostman.com/environments/5dd9a5e2-b0d8-4352-bd48-e7d6bafbb02b?apikey=PMAK-6137b6311336e0003baab4e8-e01dfe3d8e80f7422da2861ec88040db69",
+					"protocol": "https",
+					"host": [
+						"api",
+						"getpostman",
+						"com"
+					],
+					"path": [
+						"environments",
+						"5dd9a5e2-b0d8-4352-bd48-e7d6bafbb02b"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "PMAK-6137b6311336e0003baab4e8-e01dfe3d8e80f7422da2861ec88040db69"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
